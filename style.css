@@ -1,0 +1,331 @@
+/* Fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Monda:wght@700&display=swap");
+@import url('https://fonts.cdnfonts.com/css/enfonix-2');
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.cdnfonts.com/css/lord-of-the-sith");
+@import url("https://fonts.cdnfonts.com/css/ethnocentric");
+@import url("https://fonts.cdnfonts.com/css/cfb1-american-patriot");
+
+
+/* Custom properties */
+
+:root {
+    --bg-color: hsl(0, 0%, 0%);
+    --bg-gradient-1: hsl(260, 100%, 10%);
+    --bg-gradient-2: hsl(0, 0%, 0%);
+    --text-color: hsl(0, 0%, 90%);
+    --accent-color-1: #fff200;
+    --accent-color-2: #b614cc;
+}
+
+/* Reset */
+
+* {
+    box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+a,
+p,
+span {
+    margin: 0px;
+    padding: 0px;
+    font-weight: 400;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Body */
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0px;
+    overflow: hidden;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    background: radial-gradient(
+        circle at 50% 100%,
+        var(--bg-gradient-1),
+        var(--bg-gradient-2)
+    );
+    font-family: "Monda", sans-serif;
+}
+
+/* Nav */
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+nav > .nav-section {
+    display: flex;
+    gap: 3rem;
+    padding: 2rem;
+}
+
+#nav-section-logo {
+    width: calc(100% / 6);
+    font-size: clamp(1.5rem, 10vw, 2.5rem);
+    font-family: 'Enfonix', sans-serif;
+    text-transform: uppercase;
+}
+
+#nav-section-contact {
+    width: calc(100% / 6);
+    justify-content: end;
+}
+
+#nav-section-menu {
+    display: none;
+}
+
+/* Main */
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main > h1 {
+    text-align: center;
+    font-family: "Monospace", sans-serif;
+    font-size: clamp(3rem, 5vw, 10rem);
+}
+
+main > h1 .accent {
+    width: 6.5em;
+    display: inline-block;
+    font-family: 'Enfonix', sans-serif;
+    letter-spacing: 0.15em;
+    font-variant-numeric: tabular-nums lining-nums;
+    text-transform: uppercase;
+    color: var(--accent-color-1);
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer > .footer-section {
+    display: flex;
+    gap: 2.5rem;
+    align-items: baseline;
+    padding: 1rem 2rem;
+}
+
+footer > #footer-section-social > a {
+    height: fit-content;
+}
+
+/* Socials */
+
+.brainlink {
+    font-family: "Pacifico", cursive;
+}
+
+.omni {
+    font-family: "Ethnocentric Rg", sans-serif;
+}
+
+.netedge {
+    font-family: "CFB1 American Patriot", sans-serif;
+}
+
+.linkify {
+    font-family: "Lord of the Sith", sans-serif;
+}
+
+/* Button link */
+
+.btn-link {
+    position: relative;
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    overflow: hidden;
+}
+
+.btn-link > span {
+    position: absolute;
+    display: block;
+}
+
+.btn-link:hover > span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-color-1));
+    animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+.btn-link:hover > span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, var(--accent-color-1));
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+.btn-link:hover > span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, var(--accent-color-1));
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+.btn-link:hover > span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, var(--accent-color-1));
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}
+
+/* Responsive */
+
+@media all and (min-width: 940px) and (max-width: 1280px) {
+    nav > .nav-section {
+        gap: 0rem;
+    }
+
+    main > h1 {
+        padding-inline: 2rem;
+    }
+}
+
+@media all and (max-width: 940px) {
+    nav > #nav-section-links {
+        position: absolute;
+        top: -50%;
+        flex-direction: column;
+        gap: 0rem;
+        justify-content: center;
+        width: 100%;
+        padding-top: 6rem;
+        background-color: hsla(0, 0%, 100%, 0.2);
+        box-shadow: 0px 10px 10px hsla(0, 0%, 100%, 0.06);
+        border-left: 2px solid hsla(0, 0%, 100%, 0.3);
+        border-top: 2px solid hsla(0, 0%, 100%, 0.2);
+        border-right: 2px solid hsla(0, 0%, 100%, 0.1);
+        border-bottom: 2px solid hsla(0, 0%, 100%, 0.1);
+        backdrop-filter: blur(10px);
+        transition: top 0.6s cubic-bezier(.24,.46,.04,1) 0s;
+    }
+
+    nav > #nav-section-logo,
+    nav > #nav-section-menu {
+        z-index: 1;
+    }
+
+    nav > #nav-section-contact {
+        display: none;
+    }
+
+    nav > #nav-section-links > a {
+        text-align: center;
+    }
+
+    #nav-section-menu {
+        display: block;
+    }
+
+    #nav-section-menu > .btn-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 2.5rem;
+        height: 2rem;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+
+    #nav-section-menu > .btn-menu > span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: var(--text-color);
+    }
+
+    main > h1 {
+        padding-inline: 2rem;
+    }
+
+    footer > .footer-section {
+        gap: 1rem;
+    }
+
+    footer > #footer-section-social {
+        justify-content: end;
+        flex-wrap: wrap;
+    }
+
+    footer > #footer-section-social > a {
+        padding: 0rem;
+    }
+
+    .show  {
+        top: 0 !important;
+    }
+}
